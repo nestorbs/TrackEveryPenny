@@ -9,6 +9,7 @@ import org.robolectric.RobolectricTestRunner;
 
 import android.widget.TextView;
 
+import com.nestorbs.trackeverypennyandroid.BrowseTransactionsActivity;
 import com.nestorbs.trackeverypennyandroid.R;
 
 @RunWith(RobolectricTestRunner.class)

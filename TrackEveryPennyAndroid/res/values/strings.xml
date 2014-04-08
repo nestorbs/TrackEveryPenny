@@ -4,5 +4,6 @@
     <string name="app_name">TrackEveryPennyAndroid</string>
     <string name="hello_world">Hello my friend!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_browse_transactions">BrowseTransactionsActivity</string>
 
 </resources>
