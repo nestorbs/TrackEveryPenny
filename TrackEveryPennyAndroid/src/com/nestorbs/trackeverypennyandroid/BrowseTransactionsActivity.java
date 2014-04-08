@@ -1,5 +1,7 @@
 package com.nestorbs.trackeverypennyandroid;
 
+import com.nestorbs.toolkit.ProgrammerMistake;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -60,10 +62,12 @@ public class BrowseTransactionsActivity extends Activity {
 		}
 	}
 	
-	public void displayNumberOfTransactions (int transactionsCount){
-		
+	public void displayNumberOfTransactions (int transactionCount){
+		if(transactionCount < 0)
+			throw new ProgrammerMistake( new IllegalArgumentException(
+					String.format("number of transactions can't be negative, but it's %1$d", transactionCount)));
 		final TextView transactionsCountView = (TextView) findViewById(R.id.transactionsCount);
-		transactionsCountView.setText(String.format("%1$d", transactionsCount));
+		transactionsCountView.setText(String.format("%1$d", transactionCount));
 	}
 
 }
