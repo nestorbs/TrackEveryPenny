@@ -1,8 +1,6 @@
 package com.nestorbs;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,12 +9,11 @@ import org.robolectric.RobolectricTestRunner;
 
 import android.widget.TextView;
 
-import com.nestorbs.toolkit.ProgrammerMistake;
 import com.nestorbs.trackeverypennyandroid.BrowseTransactionsActivity;
 import com.nestorbs.trackeverypennyandroid.R;
 
 @RunWith(RobolectricTestRunner.class)
-public class DisplayNumberOfTransactionsTest {
+public class DisplayNumberOfTransactionsTest extends BrowseTransactionsViewContract {
 	
   @Test
   public void happyPath() throws Exception {
@@ -28,16 +25,11 @@ public class DisplayNumberOfTransactionsTest {
 	
 	  assertEquals("13", transactionsCountView.getText().toString());
   }
-  
-  @Test
-  public void rejectNegativeNumber() throws Exception {
-	  BrowseTransactionsActivity browseTransactionsActivity = 
-			  Robolectric.buildActivity(BrowseTransactionsActivity.class).create().get();
-	  try{
-		  browseTransactionsActivity.displayNumberOfTransactions(-1);
-		  fail("Why did you display a negative number of transations? " + "That's crazy talk!");
-	  } catch (ProgrammerMistake success) {
-		  assertTrue(success.getCause() instanceof IllegalArgumentException);
-	  }
-  }
+ 
+  @Override
+	protected BrowseTransactionsView initializeView() {
+		final BrowseTransactionsActivity browseTransactionsActivity = 
+				Robolectric.buildActivity(BrowseTransactionsActivity.class).create().get();
+		return browseTransactionsActivity;
+	}
 }

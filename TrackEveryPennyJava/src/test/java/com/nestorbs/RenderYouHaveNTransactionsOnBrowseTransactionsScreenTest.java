@@ -1,7 +1,7 @@
 package com.nestorbs;
 
-
-import org.jmock.*;
+import org.jmock.Expectations;
+import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;
 import org.junit.Test;
 import org.junit.runner.RunWith;

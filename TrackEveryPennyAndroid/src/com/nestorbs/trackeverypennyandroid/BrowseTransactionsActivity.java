@@ -1,7 +1,5 @@
 package com.nestorbs.trackeverypennyandroid;
 
-import com.nestorbs.toolkit.ProgrammerMistake;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -12,7 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class BrowseTransactionsActivity extends Activity {
+import com.nestorbs.BrowseTransactionsView;
+import com.nestorbs.toolkit.ProgrammerMistake;
+
+public class BrowseTransactionsActivity extends Activity implements BrowseTransactionsView{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
