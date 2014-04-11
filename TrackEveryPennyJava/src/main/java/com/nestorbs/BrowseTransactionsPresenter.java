@@ -1,6 +1,6 @@
 package com.nestorbs;
 
-public class BrowseTransactionsPresenter {
+public class BrowseTransactionsPresenter implements RendersView{
   private final BrowseTransactionsModel model;
   private final BrowseTransactionsView view;
 

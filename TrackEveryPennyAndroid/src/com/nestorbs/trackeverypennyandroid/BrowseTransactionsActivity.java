@@ -10,14 +10,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.nestorbs.BrowseTransactionsModel;
+import com.nestorbs.BrowseTransactionsPresenter;
 import com.nestorbs.BrowseTransactionsView;
 import com.nestorbs.RendersView;
 import com.nestorbs.toolkit.ProgrammerMistake;
 
 public class BrowseTransactionsActivity extends Activity implements BrowseTransactionsView{
 	private final RendersView rendersView;
+	
 	public BrowseTransactionsActivity() {
-	    this(null);
+	    // We can't chain the constructor, because the instance in the process of being created is itself the view.
+	    // We have to wait for super() to be (implicitly) invoked.
+	    this.rendersView = new BrowseTransactionsPresenter(
+	        new BrowseTransactionsModel() {
+	          @Override
+	          public int countTransactions() {
+	            return 12;
+	          }
+	        }, this);
 	  }
 
 	  public BrowseTransactionsActivity(
