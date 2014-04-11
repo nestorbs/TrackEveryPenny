@@ -11,10 +11,28 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.nestorbs.BrowseTransactionsView;
+import com.nestorbs.RendersView;
 import com.nestorbs.toolkit.ProgrammerMistake;
 
 public class BrowseTransactionsActivity extends Activity implements BrowseTransactionsView{
+	private final RendersView rendersView;
+	public BrowseTransactionsActivity() {
+	    this(null);
+	  }
 
+	  public BrowseTransactionsActivity(
+	      RendersView rendersView
+	  ) {
+	    this.rendersView = rendersView;
+	  }
+
+	  @Override
+	  protected void onResume() {
+	    super.onResume();
+	    // Arbitrarily, I assume that I should do my work after the superclass, but I don't really know.
+	    rendersView.render();
+	  }
+	  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
