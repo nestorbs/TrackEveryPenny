@@ -4,9 +4,11 @@ import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 
 import com.nestorbs.trackeverypennyandroid.BrowseTransactionsActivity;
+import com.nestorbs.trackeverypennyandroid.MainActivity;
 
 //I can't run the Activity without Robolectric, and I
 //can't run with both Robolectric and JMock, so I choose
@@ -57,5 +59,21 @@ public class RenderBrowseTransactionsScreenTest {
     }.onResume();
 
     mockery.assertIsSatisfied();
+  }
+  
+  @Test
+  public void exportAllTransactionsButtonDoesNotBlowUp()
+      throws Exception {
+    final BrowseTransactionsActivity
+        browseTransactionsActivity
+        = Robolectric.buildActivity(BrowseTransactionsActivity.class).create().get();
+
+    final Button exportAllTransactionsButton
+        = (Button) browseTransactionsActivity.findViewById(
+        R.id
+            .exportAllTransactionsButton);
+    exportAllTransactionsButton.performClick();
+
+    // don't blow up
   }
 }
