@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="lib" path="/Users/nbethencourt/Development/Java_libraries/junit-4.11.jar"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/test/java"/>
@@ -11,5 +12,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/TrackEveryPennyJava"/>
 	<classpathentry kind="lib" path="/Users/nbethencourt/Development/Java_libraries/test_trackeverypenny/jmock-junit4-2.6.0-RC2.jar"/>
+	<classpathentry kind="lib" path="/Users/nbethencourt/Development/Java_libraries/test_trackeverypenny/junit-dep-4.10.jar"/>
+	<classpathentry kind="lib" path="/Users/nbethencourt/Development/Java_libraries/test_trackeverypenny/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/nbethencourt/Development/Java_libraries/test_trackeverypenny/hamcrest-library-1.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

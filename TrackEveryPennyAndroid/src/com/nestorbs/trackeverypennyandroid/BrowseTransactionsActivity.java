@@ -100,4 +100,7 @@ public class BrowseTransactionsActivity extends Activity implements BrowseTransa
 		transactionsCountView.setText(String.format("%1$d", transactionCount));
 	}
 
+	public void exportAllTransactionsButton(View clicked) {
+		//Nothing yet
+	}
 }

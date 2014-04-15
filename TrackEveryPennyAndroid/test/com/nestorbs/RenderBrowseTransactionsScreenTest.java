@@ -7,8 +7,10 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 
+import android.widget.Button;
+
 import com.nestorbs.trackeverypennyandroid.BrowseTransactionsActivity;
-import com.nestorbs.trackeverypennyandroid.MainActivity;
+import com.nestorbs.trackeverypennyandroid.R;
 
 //I can't run the Activity without Robolectric, and I
 //can't run with both Robolectric and JMock, so I choose
@@ -66,14 +68,13 @@ public class RenderBrowseTransactionsScreenTest {
       throws Exception {
     final BrowseTransactionsActivity
         browseTransactionsActivity
-        = Robolectric.buildActivity(BrowseTransactionsActivity.class).create().get();
+        = Robolectric.buildActivity(BrowseTransactionsActivity.class).create().visible().get();
 
     final Button exportAllTransactionsButton
         = (Button) browseTransactionsActivity.findViewById(
         R.id
             .exportAllTransactionsButton);
     exportAllTransactionsButton.performClick();
-
     // don't blow up
   }
 }
